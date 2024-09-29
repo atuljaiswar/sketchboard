@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@500"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="menu">
+          <i class="fas fa-bars"></i>
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="toolContainer">
+          <div class="pencilContainer">
+            <img src="./Icons/Pencil.svg" alt="Pencil" class="pencilImg" />
+            <div class="pencilToolContainer rangeTool">
+              <div class="rangeContainer">
+                <input type="range" min="2" max="10" value="3" />
+              </div>
+              <div class="colorOptionContainer">
+                <span class="red pencilColor"></span
+                ><span class="blue pencilColor"></span
+                ><span class="green pencilColor"></span>
+              </div>
+            </div>
+          </div>
+          <div class="eraserContainer">
+            <img src="./Icons/Eraser.svg" alt="Eraser" class="eraserImg" />
+            <div class="eraserToolContainer rangeTool">
+              <div class="rangeContainer">
+                <input type="range" min="2" max="10" value="3" />
+              </div>
+            </div>
+          </div>
+          <div class="downloadContainer">
+            <img src="./Icons/Download.svg" alt="Download" />
+          </div>
+          <div class="uploadContainer">
+            <img src="./Icons/Upload.svg" alt="Upload" />
+          </div>
+          <div class="stickyNote">
+            <img src="./Icons/StickyNote.svg" alt="Sticky Note" />
+          </div>
+          <div class="undo"><img src="./Icons//Undo.svg" alt="Undo" /></div>
+          <div class="redo"><img src="./Icons/Redo.svg" alt="Redo" /></div>
+        </div>
+        <!-- <div class="stickyContainer">
+          <div class="sticky-header">
+            <span class="minimize">Minimize</span>
+            <span class="remove">Remove</span>
+          </div>
+          <div class="stickyContent">
+            <textarea name="" id=""></textarea>
+          </div>
+        </div> -->
+      </header>
+    </div>
+    <canvas id="sketchboard"></canvas>
+
+    <script
+      src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+      integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let socket = io.connect('http://localhost:5000/');
+    </script>
+    <script src="./index.js"></script>
+    <script src="./canvas.js"></script>
+  </body>
+</html>

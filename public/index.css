@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+}
+
+.container {
+	width: 70%;
+	max-width: 1560px;
+	margin: 50px auto 0;
+}
+
+header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.menu {
+	width: 90px;
+	height: 90px;
+	background-color: #f1f2f6;
+	border-radius: 50%;
+	box-shadow: 0 0 8px -3px #000;
+	position: relative;
+	cursor: pointer;
+}
+
+.menu .fa-bars,.fa-times {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 40px;
+}
+
+.menu .fa-times {
+	display: none;
+	transition: all ease-in .3s;
+}
+
+.header.show .fa-bars {
+	display: none;
+	transition: all ease-in .3s;
+}
+
+.header.show .fa-times {
+	display: block;
+	transition: all ease-in .3s;
+}
+
+
+
+.toolContainer {
+	background-color: #f1f2f6;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	width: 70%;
+	border-radius: 10px;
+	height: 100px;
+	display: flex;
+	column-gap: 15px;
+	align-items: center;
+	justify-content: space-evenly;
+	animation: scaleUp1 .7s linear 0s 1 normal forwards;
+	transform: scale(0);
+}
+
+.toolContainer > div {
+  flex-basis: 35%;
+	cursor: pointer;
+}
+
+.toolContainer div img {
+	width: 100%;
+	aspect-ratio: 3/2;
+}
+
+.pencilContainer, .eraserContainer {
+	position: relative;
+}
+
+
+.rangeTool {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background-color: #f1f2f6;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	padding: 10px;
+}
+
+.rangeTool .rangeContainer {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.rangeContainer input {
+	width: 100%;
+}
+
+.pencilToolContainer, .eraserToolContainer {
+	display: none;
+}
+
+.pencilToolContainer .colorOptionContainer {
+	display: flex;
+	column-gap: 5px;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.pencilToolContainer .colorOptionContainer .pencilColor {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: red;
+}
+
+.pencilToolContainer .colorOptionContainer .blue {
+	background-color: blue;
+}
+
+.pencilToolContainer .colorOptionContainer .green {
+	background-color: green;
+}
+
+@keyframes scaleUp1 {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+
+@keyframes scaleDown {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(0);
+	}
+}
+
+
+.header.show .toolContainer {
+	animation: scaleDown .7s linear 0s 1 normal forwards;
+}
+
+
+.stickyContainer {
+	width: 15rem;
+	height: 15rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 30%;
+}
+
+.stickyContainer .sticky-header{
+	height: 2rem;
+	background-color: #f1f2f6;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 10px;
+	column-gap: 8px;
+}
+
+.sticky-header span {
+	height: 1.3rem;
+	width: 1.3rem;
+	border-radius: 50%;
+	text-indent: -99999px;
+}
+
+.sticky-header .minimize {
+	background-color: #2ed573;
+}
+
+.sticky-header .remove {
+	background-color: #ff4757;
+}
+
+.stickyContent {
+	height: calc(100% - 2rem);
+	/* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.stickyContent  textarea {
+	resize: none;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border: none;
+}
+
+.stickyContent img {
+	width: 100%;
+	height: 100%;
+}
+
